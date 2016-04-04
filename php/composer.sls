@@ -2,7 +2,7 @@
 {% set install_file = php.local_bin + '/' + php.composer_bin %}
 
 include:
-  - php.cli
+  - php.ng.cli
   - php.ng.curl
 
 
@@ -14,7 +14,7 @@ get-composer:
     - source: https://getcomposer.org/installer
     - source_hash: {{ php.composer_hash }}
     - require:
-      - sls: php.cli
+      - sls: php.ng.cli
       - sls: php.ng.curl
 
 
