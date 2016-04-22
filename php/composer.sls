@@ -24,7 +24,9 @@ install-composer:
     - unless: test -f {{ install_file }}
     - require:
       - file: get-composer
-
+    - env:
+      - COMPOSER_HOME: "/root/.composer/"
+      
 # Get COMPOSER_DEV_WARNING_TIME from the installed composer, and if that time has passed
 # then it's time to run `composer selfupdate`
 #
