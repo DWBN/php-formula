@@ -38,3 +38,5 @@ update-composer:
     - cwd: {{ php.local_bin }}
     - require:
       - cmd: install-composer
+    - env:
+      - COMPOSER_HOME: "/root/.composer/"
