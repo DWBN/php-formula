@@ -73,6 +73,7 @@
         'local_bin': '/usr/local/bin',
         'temp_dir': '/tmp',
         'composer_bin': 'composer',
+        'composer_version': '1.1.2',
     },
     'RedHat': {
         'php_pkg': 'php',
@@ -114,6 +115,7 @@
         'local_bin': '/usr/local/bin',
         'temp_dir': '/tmp',
         'composer_bin': 'composer',
+        'composer_version': '1.1.2',
     },
     'Suse': {
         'php_pkg': 'php5',
@@ -146,6 +148,7 @@
         'local_bin': '/usr/local/bin',
         'temp_dir': '/tmp',
         'composer_bin': 'composer',
+        'composer_version': '1.1.2',
     },
 }, merge=salt['pillar.get']('php:lookup')) %}
 
