@@ -33,6 +33,10 @@ php_ppa_env_{{ state }}:
             - LC_ALL: C.UTF-8
         - creates: /etc/apt/sources.list.d/{{ ppa_name|replace('/', '-', 1) }}-trusty.list
 
+php_ppa_upgrade_{{ state }}:
+    pkg.uptodate:
+      - name: {{ state }}
+
 php_ppa_{{ state }}:
     pkgrepo.managed:
         - ppa: {{ ppa_name }}
