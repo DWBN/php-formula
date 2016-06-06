@@ -9,6 +9,9 @@ php:
   # when you add the php.mongo formula to your execution list
   mongo_version: "1.5.5"
   ng:
+    # If using the Ubuntu-PPA it is required to specify the version to be installed.
+    # Currently supported are 5.6 and 7.0 
+    version: "5.6"
     # this section contains mostly grain filtered data, while overrides
     # are possible in the pillar for unique cases, if your OS is not
     # represented, please consider adding it to the map.jinja for
@@ -20,9 +23,9 @@ php:
       pkgs:
         memcached: php5-memcached
         # ensures both will be installed
-        curl: 
+        curl:
           - php-common
-          - curl 
+          - curl
         # a dictionary can be used in more complex cases where you want
         # to pass forward special arguments to the pkg.installed call
         # you MUST include the name argument for this to work
