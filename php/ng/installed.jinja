@@ -28,7 +28,7 @@
 
 php_ppa_env_{{ state }}:
     cmd.run:
-        - name: apt-add-repository -y ppa:{{ ppa_name }}
+        - name: apt-add-repository -y ppa:{{ ppa_name }} && apt-get update
         - env:
             - LC_ALL: C.UTF-8
         - creates: /etc/apt/sources.list.d/{{ ppa_name|replace('/', '-', 1) }}-trusty.list
