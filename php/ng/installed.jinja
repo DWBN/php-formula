@@ -20,7 +20,7 @@
     {% do pkgs.append(pkginfo) %}
 {% endif %}
 
-{% if grains['os_family']=="Debian" and (state == 'cli' or state == 'fpm' or state == 'php') %}
+{% if grains['os_family']=="Debian" %}
 {% set use_ppa        = salt['pillar.get']('php:use_ppa', False) %}
 {% if use_ppa %}
 
