@@ -31,7 +31,12 @@ php_ppa_env_{{ state }}:
         - name: apt-add-repository -y ppa:{{ ppa_name }} && apt-get update
         - env:
             - LC_ALL: C.UTF-8
+        {% if grains['oscodename']=="trusty" %}    
         - creates: /etc/apt/sources.list.d/{{ ppa_name|replace('/', '-', 1) }}-trusty.list
+        {% elif grains['oscodename']=="xenial" %}
+        - creates: /etc/apt/sources.list.d/{{ ppa_name|replace('/', '-', 1) }}-xenial.list
+        {% endif %}
+
 
 php_ppa_upgrade_{{ state }}:
     pkg.uptodate:
